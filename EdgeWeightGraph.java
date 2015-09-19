@@ -1,5 +1,5 @@
 /**
- * Edge for a Edge-Weighted Graph
+ * Edge Weighted Graph implementation
  * Based on Algorithms, 4th Ed by Robert Sedgewick | Kevin Wayne
  */
 public class EdgeWeightGraph {
@@ -48,12 +48,12 @@ public class EdgeWeightGraph {
     }
 
     //Edges adjacent to vertex v
-    public Iterable adj(int v) {
+    public Iterable<Edge> adj(int v) {
         return adj[v];
     }
 
     //All of the edges
-   public Iterable edges() {
+   public Iterable<Edge> edges() {
        Queue<Edge> edges = new Queue<>();
        for (int v = 0; v < V; v++) {
            for (Edge e : adj[v]) {
@@ -82,5 +82,6 @@ public class EdgeWeightGraph {
         In in = new In(args[0]);
         EdgeWeightGraph G = new EdgeWeightGraph(in);
         StdOut.println(G);
+
     }
 }
